@@ -1,0 +1,31 @@
+/* General styles */
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
+    grid-template-rows: repeat(2, 1fr); /* Two rows of equal size */
+    gap: 20px; /* Space between the widget boxes */
+    height: calc(100vh - 100px); /* Full height minus some space for the header */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .widget-box {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Adjust grid for smaller screens */
+  @media (max-width: 768px) {
+    .dashboard-widgets {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+      grid-template-rows: repeat(4, 1fr); /* Four rows */
+    }
+  }
+  

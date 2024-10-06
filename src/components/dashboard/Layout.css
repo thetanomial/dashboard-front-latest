@@ -1,0 +1,204 @@
+/* Basic styles for the layout container */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin: 20px 0;
+  }
+  
+  .sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #34495e;
+    color: #ffffff;
+  }
+  
+  /* Improved active link styles */
+  .sidebar a.active {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Add a subtle indicator for active links */
+  .sidebar a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #ffffff;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  /* Main content area */
+  .content {
+    flex: 1;
+    padding: 40px;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+    }
+    .content {
+      padding: 20px;
+    }
+  }
+  
+  /* Button styles */
+  .go-back {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+  }
+  
+  .go-back-to-dashboard {
+    background-color: #87ceeb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+  }
+  
+  .go-back:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Link styles */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Sub-links section */
+  .sub-links {
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+  }
+  
+  .sub-links h3 {
+    color: #ecf0f1;
+  }
+  
+  .sub-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sub-links ul li {
+    margin: 10px 0;
+  }
+  
+  .sub-links ul li a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    transition: all 0.3s ease;
+  }
+  
+  /* Improved sub-links active state */
+  .sub-links ul li a.active {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sub-links ul li a:hover {
+    background-color: #2980b9;
+    color: #ffffff;
+  }
+  
+  /* Enhanced locked links styles */
+  .sub-links ul li a.locked {
+    pointer-events: none;
+    color: #a0aec0;
+    background-color: #2c3e50;
+    opacity: 0.8;
+    cursor: not-allowed;
+    position: relative;
+    padding-right: 35px;
+  }
+  
+  /* Add a lock icon using pseudo-element */
+  .sub-links ul li a.locked::after {
+    content: '🔒';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+  
+  /* Ensure locked links maintain disabled appearance on hover */
+  .sub-links ul li a.locked:hover {
+    background-color: #2c3e50;
+    color: #a0aec0;
+    cursor: not-allowed;
+  }
+  
+  /* Optional: Add a subtle hover effect to indicate it's disabled */
+  .sub-links ul li a.locked:hover::before {
+    content: 'Locked';
+    position: absolute;
+    right: 35px;
+    font-size: 12px;
+    opacity: 0.7;
+  }

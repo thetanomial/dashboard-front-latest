@@ -1,0 +1,15 @@
+/* src/components/ProfileCard.css */
+.profile-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px; /* Add some space below the card */
+  }
+  
+  .profile-image {
+    width: 160px; /* Set your desired width */
+    height: 160px; /* Set your desired height */
+    border-radius: 40%; /* Make it circular */
+  }
+  
